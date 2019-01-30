@@ -40,7 +40,7 @@ namespace WindowsFormsApplication3
                     pivot.ExportToXlsx(fileName);
                 }
                 finally {
-                    pivot.CustomFieldValueCells -= (pivotGridControl1_CustomFieldValueCells;
+                    pivot.CustomFieldValueCells -= pivotGridControl1_CustomFieldValueCells;
                     pivot.RefreshData();
                     pivot.Cells.FocusedCell = fCell;
                     pivot.Cells.Selection = selection;
