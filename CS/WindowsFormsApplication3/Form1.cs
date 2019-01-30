@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using DevExpress.XtraPivotGrid;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using DevExpress.XtraPivotGrid;
 
 namespace WindowsFormsApplication3
 {
     public partial class Form1 : Form
     {
+        string fileName = "Book1.xlsx";
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +19,7 @@ namespace WindowsFormsApplication3
             this.customerReportsTableAdapter.Fill(this.nwindDataSet.CustomerReports);
 
         }
-        string fileName = "Book1.xlsx";
+
         private void button1_Click(object sender, EventArgs e)
         {   
             PivotGridControl pivot = pivotGridControl1 ;
@@ -35,23 +31,20 @@ namespace WindowsFormsApplication3
             else
             {
                 Rectangle selection = pivot.Cells.Selection;
-                Point focussedCell = pivot.Cells.FocusedCell;
+                Point fCell = pivot.Cells.FocusedCell;
                 pivot.Tag = selection ;
-                pivot.CustomFieldValueCells += new PivotCustomFieldValueCellsEventHandler(pivotGridControl1_CustomFieldValueCells);
+                pivot.CustomFieldValueCells += pivotGridControl1_CustomFieldValueCells;
                 try
                 {
                     pivot.RefreshData();
                     pivot.ExportToXlsx(fileName);
                 }
                 finally {
-                    pivot.CustomFieldValueCells -= new PivotCustomFieldValueCellsEventHandler(pivotGridControl1_CustomFieldValueCells);
+                    pivot.CustomFieldValueCells -= (pivotGridControl1_CustomFieldValueCells;
                     pivot.RefreshData();
-                    pivot.Cells.FocusedCell = focussedCell;
+                    pivot.Cells.FocusedCell = fCell;
                     pivot.Cells.Selection = selection;
                 }
-                
-                
-                
             }
 
             System.Diagnostics.Process.Start(fileName);

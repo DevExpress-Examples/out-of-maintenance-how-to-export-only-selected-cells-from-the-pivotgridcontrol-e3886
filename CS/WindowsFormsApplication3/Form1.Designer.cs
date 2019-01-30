@@ -38,9 +38,12 @@
             this.fieldProductAmount = new DevExpress.XtraPivotGrid.PivotGridField();
             this.customerReportsTableAdapter = new WindowsFormsApplication3.nwindDataSetTableAdapters.CustomerReportsTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pivotGridControl1
@@ -53,9 +56,9 @@
             this.fieldCompanyName,
             this.fieldOrderDate,
             this.fieldProductAmount});
-            this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
+            this.pivotGridControl1.Location = new System.Drawing.Point(0, 49);
             this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(687, 398);
+            this.pivotGridControl1.Size = new System.Drawing.Size(687, 349);
             this.pivotGridControl1.TabIndex = 0;
             // 
             // customerReportsBindingSource
@@ -108,27 +111,38 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(314, 0);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.Size = new System.Drawing.Size(166, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Export";
+            this.button1.Text = "Export Selected Cells to .XLSX";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.button1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(687, 49);
+            this.panelControl1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 398);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pivotGridControl1);
+            this.Controls.Add(this.panelControl1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -144,6 +158,7 @@
         private DevExpress.XtraPivotGrid.PivotGridField fieldOrderDate;
         private DevExpress.XtraPivotGrid.PivotGridField fieldProductAmount;
         private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
 
