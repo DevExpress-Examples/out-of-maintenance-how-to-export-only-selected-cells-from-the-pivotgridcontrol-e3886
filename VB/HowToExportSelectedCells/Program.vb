@@ -3,7 +3,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Windows.Forms
 
-Namespace WindowsFormsApplication3
+Namespace HowToExportSelectedCells
 	Friend NotInheritable Class Program
 
 		Private Sub New()

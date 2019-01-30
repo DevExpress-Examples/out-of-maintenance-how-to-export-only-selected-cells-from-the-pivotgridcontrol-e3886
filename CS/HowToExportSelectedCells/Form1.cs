@@ -3,9 +3,9 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication3
+namespace HowToExportSelectedCells
 {
-    public partial class Form1 : Form
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         string fileName = "Book1.xlsx";
         public Form1()
@@ -15,9 +15,8 @@ namespace WindowsFormsApplication3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'nwindDataSet.CustomerReports' table. You can move, or remove it, as needed.
-            this.customerReportsTableAdapter.Fill(this.nwindDataSet.CustomerReports);
-
+            excelDataSource1.FileName = "SalesPerson.xlsx";
+            excelDataSource1.Fill();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,7 +39,7 @@ namespace WindowsFormsApplication3
                     pivot.ExportToXlsx(fileName);
                 }
                 finally {
-                    pivot.CustomFieldValueCells -= (pivotGridControl1_CustomFieldValueCells;
+                    pivot.CustomFieldValueCells -= pivotGridControl1_CustomFieldValueCells;
                     pivot.RefreshData();
                     pivot.Cells.FocusedCell = fCell;
                     pivot.Cells.Selection = selection;
