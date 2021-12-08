@@ -13,4 +13,4 @@
 
 To include only selected cells in the resulting XLSX document, handle the [PivotGridControl.CustomFieldValueCells](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.CustomFieldValueCells) event.
 
-![screenshot](https://github.com/DevExpress-Examples/how-to-export-only-selected-cells-from-the-pivotgridcontrol-e3886/blob/18.2.4%2B/images/screenshot.png)
+![screenshot](./images/screenshot.png)
